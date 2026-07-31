@@ -1,243 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffffff" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#10161A" />
 
-  <title>Nitish Kumar Yadav — Full Stack Developer</title>
-  <meta name="description" content="Nitish Kumar Yadav is a Full Stack Developer and Co-founder & CTO of Admeasy. He builds scalable web applications, AI-powered software, and developer-focused solutions." />
-  <meta name="author" content="Nitish Kumar Yadav" />
-  <link rel="canonical" href="https://nitishkumaryadav.dev/" />
+<title>Nitish Kumar Yadav — Full Stack Developer</title>
+<meta name="description" content="Nitish Kumar Yadav is a Full Stack Developer and Co-founder & CTO of Admeasy. He builds scalable web applications, AI-powered software, and developer-focused solutions." />
+<meta name="author" content="Nitish Kumar Yadav" />
+<link rel="canonical" href="https://nitishkumaryadav.dev/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Nitish Kumar Yadav — Full Stack Developer" />
-  <meta property="og:description" content="I build scalable web applications, AI-powered software, and developer-focused solutions." />
-  <meta property="og:url" content="https://nitishkumaryadav.dev/" />
-  <meta property="og:site_name" content="Nitish Kumar Yadav" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nitish Kumar Yadav — Full Stack Developer" />
+<meta property="og:description" content="I build scalable web applications, AI-powered software, and developer-focused solutions." />
+<meta property="og:url" content="https://nitishkumaryadav.dev/" />
+<meta property="og:site_name" content="Nitish Kumar Yadav" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Nitish Kumar Yadav — Full Stack Developer" />
-  <meta name="twitter:description" content="I build scalable web applications, AI-powered software, and developer-focused solutions." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Nitish Kumar Yadav — Full Stack Developer" />
+<meta name="twitter:description" content="I build scalable web applications, AI-powered software, and developer-focused solutions." />
 
-  <style>
-    /* ── Reset ── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    /* ── Base ── */
-    html {
-      font-size: 18px;
-      -webkit-text-size-adjust: 100%;
-    }
+<style>
+  :root{
+    --bg:      #10161a;
+    --bg-2:    #161d22;
+    --paper:   #ece7dc;
+    --accent:  #f2a63a;
 
-    body {
-      background: #fff;
-      color: #111;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.7;
-      padding: 3rem 1.25rem 5rem;
-    }
+    --paper-70: rgba(236,231,220,.72);
+    --paper-45: rgba(236,231,220,.45);
+    --paper-15: rgba(236,231,220,.12);
+    --accent-15: rgba(242,166,58,.14);
 
-    /* ── Layout ── */
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-    }
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
 
-    /* ── Typography ── */
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 0.35rem;
-    }
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 
-    h2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #111;
-      padding-bottom: 0.35rem;
-    }
+  html{ scroll-behavior:smooth; }
 
-    h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.15rem;
-    }
+  body{
+    background:
+      radial-gradient(circle at 1px 1px, var(--paper-15) 1px, transparent 0) 0 0/28px 28px,
+      var(--bg);
+    color:var(--paper);
+    font-family:var(--sans);
+    line-height:1.7;
+    padding:4rem 1.25rem 6rem;
+    -webkit-font-smoothing:antialiased;
+  }
 
-    p {
-      margin-bottom: 1rem;
-      color: #222;
-    }
+  .container{ max-width:780px; margin:0 auto; }
 
-    ul {
-      padding-left: 1.25rem;
-      margin-bottom: 1rem;
-    }
+  a{ color:var(--paper); text-decoration:none; }
+  a:hover{ color:var(--accent); }
 
-    li {
-      margin-bottom: 0.25rem;
-      color: #222;
-    }
+  ::selection{ background:var(--accent); color:var(--bg); }
 
-    a {
-      color: #111;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
 
-    a:hover {
-      color: #555;
-    }
+  /* ── Terminal hero ── */
+  .terminal{
+    background:var(--bg-2);
+    border:1px solid var(--paper-15);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -25px rgba(0,0,0,.6);
+  }
 
-    /* ── Sections ── */
-    section {
-      margin-top: 3.5rem;
-    }
+  .terminal-bar{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.7rem .9rem;
+    background:rgba(0,0,0,.18);
+    border-bottom:1px solid var(--paper-15);
+  }
 
-    /* ── Header ── */
-    header {
-      margin-bottom: 0.5rem;
-    }
+  .dot{ width:11px; height:11px; border-radius:50%; background:var(--paper-15); }
+  .terminal-title{
+    margin-left:.5rem;
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--paper-45);
+    letter-spacing:.02em;
+  }
 
-    .subtitle {
-      font-size: 1.1rem;
-      color: #444;
-      margin-bottom: 0.15rem;
-    }
+  .terminal-body{ padding:1.6rem 1.4rem 1.9rem; font-family:var(--mono); }
 
-    .intro {
-      margin-top: 1.5rem;
-      font-size: 1.05rem;
-      color: #333;
-      max-width: 680px;
-    }
+  .line{ font-size:.92rem; color:var(--paper-70); }
+  .prompt{ color:var(--accent); }
+  .path{ color:var(--paper-70); }
+  .dollar{ color:var(--paper-45); margin-right:.15rem; }
 
-    /* ── Nav links ── */
-    .nav-links {
-      margin-top: 1.25rem;
-      font-size: 0.95rem;
-      color: #555;
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem 0;
-    }
+  .cursor{
+    display:inline-block;
+    color:var(--accent);
+    animation:blink 1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
 
-    .nav-links li {
-      color: #555;
-      margin: 0;
-    }
+  .output{
+    margin-top:1.1rem;
+    opacity:0;
+    transform:translateY(6px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .output.show{ opacity:1; transform:translateY(0); }
 
-    .nav-links li + li::before {
-      content: " · ";
-      color: #999;
-      padding: 0 0.4rem;
-    }
+  h1{
+    font-family:var(--sans);
+    font-size:2.3rem;
+    font-weight:700;
+    letter-spacing:-0.02em;
+    line-height:1.15;
+    margin-bottom:.35rem;
+  }
 
-    /* ── Skills grid ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1.5rem 2rem;
-    }
+  .role{
+    font-family:var(--mono);
+    font-size:.95rem;
+    color:var(--accent);
+    margin-bottom:1.1rem;
+  }
 
-    .skill-group h3 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: #555;
-      margin-bottom: 0.5rem;
-      border: none;
-    }
+  .bio{
+    font-family:var(--sans);
+    font-size:1.02rem;
+    color:var(--paper-70);
+    max-width:620px;
+    margin-bottom:1.4rem;
+  }
 
-    .skill-group ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+  .hero-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.55rem;
+    align-items:center;
+  }
 
-    .skill-group li {
-      font-size: 0.95rem;
-      color: #222;
-      margin-bottom: 0.2rem;
-    }
+  .hero-links a{
+    font-family:var(--mono);
+    font-size:.82rem;
+    color:var(--paper-70);
+    background:rgba(0,0,0,.2);
+    border:1px solid var(--paper-15);
+    border-radius:6px;
+    padding:.4rem .7rem;
+    transition:border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .hero-links a:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+    background:var(--accent-15);
+  }
+  .hero-links a::before{ content:"$ "; color:var(--paper-45); }
+  .hero-links a:hover::before{ color:var(--accent); }
 
-    /* ── Experience entry ── */
-    .experience-meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 0.6rem;
-    }
+  /* ── Sections ── */
+  section{ margin-top:4rem; opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  section.show{ opacity:1; transform:translateY(0); }
 
-    /* ── Education entry ── */
-    .education-entry {
-      margin-bottom: 1.5rem;
-    }
+  .section-label{
+    font-family:var(--mono);
+    font-size:.82rem;
+    color:var(--accent);
+    letter-spacing:.02em;
+    margin-bottom:1.1rem;
+    padding-bottom:.7rem;
+    border-bottom:1px solid var(--paper-15);
+  }
+  .section-label::before{ content:"// "; color:var(--paper-45); }
 
-    .education-meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 0.25rem;
-    }
+  h3{ font-family:var(--sans); font-size:1.05rem; font-weight:600; margin-bottom:.2rem; }
 
-    /* ── Footer ── */
-    footer {
-      margin-top: 5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #ddd;
-      font-size: 0.85rem;
-      color: #888;
-    }
+  p{ color:var(--paper-70); margin-bottom:1rem; }
+  p a{ text-decoration:underline; text-underline-offset:3px; color:var(--paper); }
+  p a:hover{ color:var(--accent); }
 
-    /* ── Responsive ── */
-    @media (max-width: 540px) {
-      html { font-size: 16px; }
-      h1 { font-size: 2rem; }
-      .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 1.5rem; }
-    }
-  </style>
+  /* ── About ── */
+  #about p:last-child{ margin-bottom:0; }
+
+  /* ── Experience (diff / log style) ── */
+  .exp-block{ margin-bottom:2.4rem; }
+  .exp-block:last-child{ margin-bottom:0; }
+
+  .exp-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.3rem .8rem;
+  }
+
+  .exp-dates{
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--paper-45);
+    white-space:nowrap;
+  }
+
+  .exp-meta{
+    font-family:var(--mono);
+    font-size:.82rem;
+    color:var(--accent);
+    margin-bottom:.9rem;
+  }
+
+  .log{ list-style:none; margin-top:.6rem; }
+  .log li{
+    position:relative;
+    padding-left:1.5rem;
+    margin-bottom:.6rem;
+    color:var(--paper-70);
+    font-size:.98rem;
+  }
+  .log li::before{
+    content:"+";
+    position:absolute;
+    left:0;
+    font-family:var(--mono);
+    font-weight:700;
+    color:var(--accent);
+  }
+
+  /* ── Skills ── */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:1.4rem 1.6rem;
+  }
+
+  .skill-group{
+    border:1px dashed var(--paper-15);
+    border-radius:8px;
+    padding:1rem 1.1rem;
+  }
+
+  .skill-group h4{
+    font-family:var(--mono);
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+    color:var(--paper-45);
+    margin-bottom:.7rem;
+    font-weight:600;
+  }
+
+  .chip-row{ display:flex; flex-wrap:wrap; gap:.4rem; }
+  .chip{
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--paper-70);
+    background:rgba(0,0,0,.2);
+    border:1px solid var(--paper-15);
+    border-radius:5px;
+    padding:.28rem .55rem;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .chip:hover{ border-color:var(--accent); color:var(--accent); }
+
+  /* ── Projects ── */
+  .project{
+    border:1px solid var(--paper-15);
+    border-radius:8px;
+    padding:1.1rem 1.2rem;
+    margin-bottom:1.2rem;
+    transition:border-color .2s ease;
+  }
+  .project:last-child{ margin-bottom:0; }
+  .project:hover{ border-color:var(--accent); }
+
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:.4rem .8rem;
+    margin-bottom:.6rem;
+  }
+
+  .project-head h3{ margin-bottom:0; }
+
+  .project-links{ display:flex; gap:.7rem; }
+  .project-links a{
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--paper-45);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  .project-links a:hover{ color:var(--accent); }
+
+  .project ul.log{ margin-top:0; }
+  .project ul.log li{ font-size:.95rem; }
+
+  /* ── Education timeline ── */
+  .edu-list{ position:relative; margin-top:.4rem; padding-left:1.4rem; }
+  .edu-list::before{
+    content:"";
+    position:absolute; left:5px; top:6px; bottom:6px;
+    width:1px; background:var(--paper-15);
+  }
+  .edu-entry{ position:relative; margin-bottom:1.6rem; }
+  .edu-entry:last-child{ margin-bottom:0; }
+  .edu-entry::before{
+    content:"";
+    position:absolute; left:-1.4rem; top:.35rem;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent);
+  }
+  .edu-meta{ font-family:var(--mono); font-size:.82rem; color:var(--paper-45); }
+
+  /* ── Certifications ── */
+  .cert-list{ list-style:none; margin-top:.4rem; }
+  .cert-list li{
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+    padding:.7rem 0;
+    border-bottom:1px solid var(--paper-15);
+    font-size:.95rem;
+    color:var(--paper-70);
+  }
+  .cert-list li:last-child{ border-bottom:none; }
+  .cert-list .cert-date{ font-family:var(--mono); font-size:.78rem; color:var(--paper-45); white-space:nowrap; }
+  .cert-list a{ text-decoration:underline; text-underline-offset:3px; }
+  .cert-list a:hover{ color:var(--accent); }
+
+  /* ── Additional info (languages) ── */
+  .lang-row{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:.4rem; }
+  .lang-row .chip{ padding:.4rem .7rem; }
+
+  /* ── Links ── */
+  .link-grid{ display:grid; gap:.7rem; margin-top:.4rem; }
+  .link-card{
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+    padding:.85rem 1rem;
+    border:1px solid var(--paper-15);
+    border-radius:8px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .link-card:hover{ border-color:var(--accent); background:var(--accent-15); }
+  .link-card .l-name{ font-family:var(--mono); font-size:.92rem; color:var(--paper); }
+  .link-card:hover .l-name{ color:var(--accent); }
+  .link-card .l-desc{ font-size:.85rem; color:var(--paper-45); text-align:right; }
+
+  .copy-note{
+    font-family:var(--mono);
+    font-size:.72rem;
+    color:var(--accent);
+    margin-left:.5rem;
+    opacity:0;
+    transition:opacity .2s ease;
+  }
+  .copy-note.show{ opacity:1; }
+
+  /* ── Footer ── */
+  footer{
+    margin-top:5rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--paper-15);
+    font-family:var(--mono);
+    font-size:.82rem;
+    color:var(--paper-45);
+  }
+  footer .dollar{ color:var(--paper-45); }
+
+  /* ── Responsive ── */
+  @media (max-width:540px){
+    body{ padding:2.5rem 1rem 4rem; }
+    h1{ font-size:1.85rem; }
+    .terminal-body{ padding:1.2rem 1rem 1.5rem; }
+    .skills-grid{ grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .link-card{ flex-direction:column; align-items:flex-start; gap:.15rem; }
+    .link-card .l-desc{ text-align:left; }
+    .exp-head, .project-head{ flex-direction:column; align-items:flex-start; }
+    .cert-list li{ flex-direction:column; align-items:flex-start; gap:.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .cursor{ animation:none; }
+    .output, section{ transition:none; opacity:1; transform:none; }
+  }
+</style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- ── HEADER ── -->
-  <header>
-    <h1>Nitish Kumar Yadav</h1>
-    <p class="subtitle">Full Stack Developer</p>
-    <p class="subtitle">Co-founder &amp; CTO @ Admeasy</p>
+  <!-- ── HERO / TERMINAL ── -->
+  <header class="hero">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot" style="background:#e05353"></span>
+        <span class="dot" style="background:#e8b73f"></span>
+        <span class="dot" style="background:#5cb87a"></span>
+        <span class="terminal-title">nitish@admeasy — zsh</span>
+      </div>
+      <div class="terminal-body">
+        <p class="line">
+          <span class="prompt">nitish@admeasy</span><span class="path">:~</span><span class="dollar">$</span>
+          <span id="typed"></span><span class="cursor">▌</span>
+        </p>
 
-    <p class="intro">
-      I build scalable web applications, AI-powered software, and developer-focused
-      solutions. My focus is building products that solve real-world problems with
-      clean architecture and great user experiences.
-    </p>
-
-    <ul class="nav-links" aria-label="External profiles">
-      <li><a href="https://github.com/Niti60" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/nitish-kumar-yadav-a93660327/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="https://collection.cloudinary.com/dkczwvm0e/24bb69030b6b7befad755b71f2a739c9" target="_blank" rel="noopener noreferrer">Resume</a></li>
-      <li><a href="mailto:nitish58006@gmail.com" target="_blank" rel="noopener noreferrer">Email</a></li>
-    </ul>
+        <div class="output" id="output">
+          <h1>Nitish Kumar Yadav</h1>
+          <p class="role">Full Stack Developer — Co-founder &amp; CTO @ Admeasy</p>
+          <p class="bio">
+            Full Stack Developer with hands-on experience building scalable SaaS applications and
+            production-grade web platforms using React.js, Next.js, Node.js, Express, MongoDB, and
+            TypeScript. I focus on secure authentication systems, admin dashboards, REST APIs, and
+            real-time features — with Redis caching, BullMQ background jobs, CI/CD pipelines, and
+            mobile apps built with React Native, Capacitor, and Android Studio.
+          </p>
+          <nav class="hero-links" aria-label="External profiles">
+            <a href="https://github.com/Niti60" target="_blank" rel="noopener noreferrer">github</a>
+            <a href="https://www.linkedin.com/in/nitish-kumar-yadav-a93660327/" target="_blank" rel="noopener noreferrer">linkedin</a>
+            <a href="https://collection.cloudinary.com/dkczwvm0e/24bb69030b6b7befad755b71f2a739c9" target="_blank" rel="noopener noreferrer">resume</a>
+            <a href="mailto:nitish58006@gmail.com" id="email-link">email</a>
+            <a href="tel:+919625553259">call</a>
+            <span class="copy-note" id="copy-note">copied ✓</span>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- ── ABOUT ── -->
   <section id="about" aria-labelledby="about-heading">
-    <h2 id="about-heading">About</h2>
-
+    <p class="section-label" id="about-heading">about.md</p>
     <p>
       I'm a Full Stack Developer and Co-founder &amp; CTO of
       <a href="https://admeasy.in" target="_blank" rel="noopener noreferrer">Admeasy</a>,
@@ -250,10 +446,10 @@
       systems, clean backend architecture, and AI integrations that actually add value.
     </p>
     <p>
-      My technical work spans React, Next.js, Node.js, Express, TypeScript, Supabase,
-      PostgreSQL, and REST APIs. I'm particularly interested in the intersection of
-      software engineering and AI — building products where LLMs and agents are a
-      functional part of the system, not a demo.
+      My technical work spans React, Next.js, Node.js, Express, TypeScript, MongoDB, Redis,
+      and REST APIs. I'm particularly interested in the intersection of software engineering
+      and AI — building products where LLMs and agents are a functional part of the system,
+      not a demo.
     </p>
     <p>
       I prefer building products over shipping projects. The difference is ownership,
@@ -263,137 +459,309 @@
 
   <!-- ── EXPERIENCE ── -->
   <section id="experience" aria-labelledby="experience-heading">
-    <h2 id="experience-heading">Experience</h2>
+    <p class="section-label" id="experience-heading">experience.log</p>
 
-    <h3>Admeasy</h3>
-    <p class="experience-meta">Co-founder &amp; CTO · 2025 – Present</p>
-    <p>
-      Admeasy is an EdTech startup focused on streamlining college admissions and
-      school operations. As CTO, I lead the product and engineering from architecture
-      to deployment.
-    </p>
-    <ul>
-      <li>Designed and built the frontend architecture using Next.js and TypeScript</li>
-      <li>Developed backend APIs with Node.js, Express, and Supabase (PostgreSQL)</li>
-      <li>Implemented authentication flows including JWT and OAuth integrations</li>
-      <li>Built a full ERP system covering Student Management, Attendance, Leave
-          Management, Transport Management, and Performance Tracking</li>
-      <li>Integrated AI features for automated workflows and intelligent reporting</li>
-      <li>Optimised database queries and API response times for scale</li>
-      <li>Collaborated with a small team while managing product decisions and
-          technical direction</li>
-    </ul>
+    <div class="exp-block">
+      <div class="exp-head">
+        <h3>Admeasy Admission Solutions Pvt. Ltd.</h3>
+        <span class="exp-dates">Mar 2026 — Present</span>
+      </div>
+      <p class="exp-meta">Full Stack Developer · Full-time</p>
+      <ul class="log">
+        <li>Architected and developed scalable full-stack applications using React.js, Node.js, Express, and MongoDB with secure authentication and optimized APIs</li>
+        <li>Integrated Redis caching, BullMQ background jobs, and CI/CD pipelines using GitHub Actions to improve performance and deployment efficiency</li>
+        <li>Delivered 50+ responsive UI/UX pages focused on clean design, scalability, and user experience</li>
+        <li>Independently developed and deployed mobile applications using Capacitor and Android Studio on the Google Play Store</li>
+      </ul>
+    </div>
+
+    <div class="exp-block">
+      <div class="exp-head">
+        <h3>Rishiwar Industries Pvt. Ltd.</h3>
+        <span class="exp-dates">Nov 2025 — Feb 2026</span>
+      </div>
+      <p class="exp-meta">Full Stack Developer Intern · Paid Internship</p>
+      <ul class="log">
+        <li>Architected and developed scalable Order Management and Authentication APIs, ensuring high performance and security</li>
+        <li>Built a real-time Admin Verification Dashboard for efficient applicant review, approval workflows, and operational oversight</li>
+        <li>Developed 2 mobile applications using React Native and Android Studio, extending core platform functionality to mobile users</li>
+        <li>Consistently delivered features ahead of deadlines by leveraging AI tools to boost development speed and code quality</li>
+      </ul>
+    </div>
+
+    <div class="exp-block">
+      <div class="exp-head">
+        <h3>Hindustan Soft Education Ltd.</h3>
+        <span class="exp-dates">Sep — Oct 2025</span>
+      </div>
+      <p class="exp-meta">Web Developer Intern · Internship (2 months)</p>
+      <ul class="log">
+        <li>Assisted in maintaining and debugging web applications by resolving UI and functional issues</li>
+        <li>Collaborated with the team to fix frontend and backend bugs, improving overall system stability, performance, and code quality</li>
+      </ul>
+    </div>
   </section>
 
   <!-- ── SKILLS ── -->
   <section id="skills" aria-labelledby="skills-heading">
-    <h2 id="skills-heading">Skills</h2>
+    <p class="section-label" id="skills-heading">skills.json</p>
 
     <div class="skills-grid">
       <div class="skill-group">
-        <h3>Languages</h3>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-        </ul>
+        <h4>Frontend</h4>
+        <div class="chip-row">
+          <span class="chip">React.js</span><span class="chip">Next.js</span>
+          <span class="chip">JavaScript (ES6+)</span><span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span><span class="chip">MUI</span>
+          <span class="chip">Bootstrap</span><span class="chip">Framer Motion</span>
+        </div>
       </div>
 
       <div class="skill-group">
-        <h3>Frontend</h3>
-        <ul>
-          <li>React</li>
-          <li>Next.js</li>
-          <li>Vite</li>
-        </ul>
+        <h4>Backend</h4>
+        <div class="chip-row">
+          <span class="chip">Node.js</span><span class="chip">Express.js</span>
+          <span class="chip">REST APIs</span><span class="chip">JWT / OAuth</span>
+          <span class="chip">API Optimization</span><span class="chip">Redis</span>
+          <span class="chip">BullMQ</span><span class="chip">Prisma ORM</span>
+        </div>
       </div>
 
       <div class="skill-group">
-        <h3>Backend</h3>
-        <ul>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>Supabase</li>
-          <li>PostgreSQL</li>
-          <li>REST APIs</li>
-        </ul>
+        <h4>Database</h4>
+        <div class="chip-row">
+          <span class="chip">MongoDB</span><span class="chip">SQL</span>
+          <span class="chip">Database Design &amp; Optimization</span>
+        </div>
       </div>
 
       <div class="skill-group">
-        <h3>Tools</h3>
-        <ul>
-          <li>Git &amp; GitHub</li>
-          <li>VS Code</li>
-          <li>Cursor</li>
-          <li>Postman</li>
-        </ul>
+        <h4>AI Integration</h4>
+        <div class="chip-row">
+          <span class="chip">Gemini API</span><span class="chip">AI Chatbot Development</span>
+          <span class="chip">Prompt Engineering</span>
+        </div>
       </div>
 
       <div class="skill-group">
-        <h3>Learning</h3>
-        <ul>
-          <li>DSA</li>
-          <li>System Design</li>
-          <li>AI Agents</li>
-          <li>LangGraph</li>
-        </ul>
+        <h4>DevOps &amp; Tools</h4>
+        <div class="chip-row">
+          <span class="chip">Git &amp; GitHub</span><span class="chip">GitHub Actions (CI/CD)</span>
+          <span class="chip">SSH / Remote SSH</span><span class="chip">Postman</span>
+        </div>
       </div>
+
+      <div class="skill-group">
+        <h4>IDE &amp; Platforms</h4>
+        <div class="chip-row">
+          <span class="chip">VS Code</span><span class="chip">Cursor</span>
+          <span class="chip">Claude</span><span class="chip">Codespaces</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h4>Code Strength</h4>
+        <div class="chip-row">
+          <span class="chip">Scalable System Design</span><span class="chip">Debugging &amp; Perf Optimization</span>
+          <span class="chip">Clean Code &amp; API Architecture</span><span class="chip">Problem Solving (DSA)</span>
+          <span class="chip">Fast Learning with AI Tools</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <p class="section-label" id="projects-heading">projects/</p>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>DomNotify <span style="color:var(--paper-45); font-family:var(--mono); font-size:.78rem;">(ongoing)</span></h3>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">repository</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">live demo</a>
+        </div>
+      </div>
+      <ul class="log">
+        <li>Built a premium domain monitoring SaaS using Next.js, React, Tailwind CSS, MongoDB, and JWT authentication with secure role-based access control</li>
+        <li>Developed real-time domain tracking features including expiry monitoring, SSL checks, registrar insights, watchlists, and admin management dashboards</li>
+        <li>Optimized performance and scalability through modular architecture, protected APIs, middleware-based authentication, and responsive UI/UX inspired by modern platforms like Vercel and Linear</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>AI Chatbot — PersonaX</h3>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">repository</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">live demo</a>
+        </div>
+      </div>
+      <ul class="log">
+        <li>Built Persona X, an AI chatbot application with 5 interactive personas, integrating Gemini AI, React 19, Express, and MongoDB to handle real-time conversations and prompt analytics</li>
+        <li>Implemented admin dashboard, onboarding system, and prompt-tracking architecture, enabling complete monitoring of user interactions and persona usage across the platform</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <h3>E-Commerce App</h3>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener noreferrer">repository</a>
+          <a href="#" target="_blank" rel="noopener noreferrer">live demo</a>
+        </div>
+      </div>
+      <ul class="log">
+        <li>Implemented JWT-secured APIs, 30% faster UI rendering using React + Tailwind CSS, and integrated MongoDB Atlas for scalable data storage</li>
+        <li>Built RESTful APIs using Node.js, Express, and MongoDB with optimized frontend builds powered by Vite and Tailwind CSS</li>
+        <li>Integrated user cart, wishlist, and admin dashboard functionalities to enhance overall shopping experience</li>
+      </ul>
     </div>
   </section>
 
   <!-- ── EDUCATION ── -->
   <section id="education" aria-labelledby="education-heading">
-    <h2 id="education-heading">Education</h2>
+    <p class="section-label" id="education-heading">education.txt</p>
 
-    <div class="education-entry">
-      <h3>Bachelor of Computer Applications</h3>
-      <p class="education-meta">IGNOU</p>
+    <div class="edu-list">
+      <div class="edu-entry">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p class="edu-meta">Indira Gandhi National Open University · Aug 2024 – 2027 · New Delhi, India</p>
+      </div>
+      <div class="edu-entry">
+        <h3>Diploma in MERN Stack Web Development</h3>
+        <p class="edu-meta">Oxford Software Institute · Aug 2024 – Aug 2025 · New Delhi, India</p>
+      </div>
     </div>
+  </section>
 
-    <div class="education-entry">
-      <h3>MERN Stack Training</h3>
-      <p class="education-meta">Oxford Software Institute, Delhi</p>
+  <!-- ── CERTIFICATIONS ── -->
+  <section id="certifications" aria-labelledby="certifications-heading">
+    <p class="section-label" id="certifications-heading">certifications.txt</p>
+    <ul class="cert-list">
+      <li>
+        <span>Web Developer Intern — Hindustan Soft Education Ltd. · <a href="#" target="_blank" rel="noopener noreferrer">view certificate</a></span>
+        <span class="cert-date">Oct 2025</span>
+      </li>
+      <li>
+        <span>Full Stack Developer Intern — Rishiwar Industries Pvt. Ltd. · <a href="#" target="_blank" rel="noopener noreferrer">view certificate</a></span>
+        <span class="cert-date">Feb 2026</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── ADDITIONAL INFO ── -->
+  <section id="additional" aria-labelledby="additional-heading">
+    <p class="section-label" id="additional-heading">additional.txt</p>
+    <h4 style="font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; color:var(--paper-45); margin-bottom:.6rem;">Languages</h4>
+    <div class="lang-row">
+      <span class="chip">English — Professional Proficiency</span>
+      <span class="chip">Hindi — Native / Bilingual Proficiency</span>
     </div>
   </section>
 
   <!-- ── LINKS ── -->
   <section id="links" aria-labelledby="links-heading">
-    <h2 id="links-heading">Links</h2>
+    <p class="section-label" id="links-heading">links.sh</p>
 
-    <ul>
-      <li>
-        <a href="https://github.com/Niti60" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        — code, projects, and open-source work
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/nitish-kumar-yadav-a93660327/" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        — Professional profile
-      </li>
-      <li>
-        <a href="mailto:nitish58006@gmail.com" target="_blank" rel="noopener noreferrer">
-          Email
-        </a>
-        —Professional Email 
-      </li>
-      <li>
-        <a href="https://niti60.github.io/Portfolio/resume.pdf" target="_blank" rel="noopener noreferrer">
-          Resume
-        </a>
-        — PDF, one page
-      </li>
-    </ul>
+    <div class="link-grid">
+      <a class="link-card" href="https://github.com/Niti60" target="_blank" rel="noopener noreferrer">
+        <span class="l-name">GitHub</span>
+        <span class="l-desc">code, projects &amp; open-source work</span>
+      </a>
+      <a class="link-card" href="https://www.linkedin.com/in/nitish-kumar-yadav-a93660327/" target="_blank" rel="noopener noreferrer">
+        <span class="l-name">LinkedIn</span>
+        <span class="l-desc">professional profile</span>
+      </a>
+      <a class="link-card" href="mailto:nitish58006@gmail.com">
+        <span class="l-name">Email</span>
+        <span class="l-desc">professional email</span>
+      </a>
+      <a class="link-card" href="tel:+919625553259">
+        <span class="l-name">Phone</span>
+        <span class="l-desc">+91 96255 53259</span>
+      </a>
+      <a class="link-card" href="https://niti60.github.io/Portfolio/resume.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="l-name">Resume</span>
+        <span class="l-desc">PDF, one page</span>
+      </a>
+    </div>
   </section>
 
   <!-- ── FOOTER ── -->
   <footer>
-    <p>© 2026 Nitish Kumar Yadav.</p>
+    <p><span class="dollar">$</span> echo &copy; 2026 Nitish Kumar Yadav</p>
   </footer>
 
 </div>
+
+<script>
+  // Typing effect for the hero terminal line
+  (function(){
+    const text = "whoami";
+    const typedEl = document.getElementById('typed');
+    const outputEl = document.getElementById('output');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      typedEl.textContent = text;
+      outputEl.classList.add('show');
+    } else {
+      let i = 0;
+      const speed = 90;
+      function type(){
+        if (i < text.length){
+          typedEl.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else {
+          setTimeout(() => outputEl.classList.add('show'), 300);
+        }
+      }
+      setTimeout(type, 400);
+    }
+  })();
+
+  // Scroll-reveal for sections
+  (function(){
+    const sections = document.querySelectorAll('section');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      sections.forEach(s => s.classList.add('show'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    sections.forEach(s => observer.observe(s));
+  })();
+
+  // Click-to-copy email
+  (function(){
+    const emailLink = document.getElementById('email-link');
+    const note = document.getElementById('copy-note');
+    if (!emailLink) return;
+
+    emailLink.addEventListener('click', function(e){
+      if (!navigator.clipboard) return; // let default mailto happen
+      e.preventDefault();
+      navigator.clipboard.writeText('nitish58006@gmail.com').then(() => {
+        note.classList.add('show');
+        setTimeout(() => note.classList.remove('show'), 1600);
+      }).catch(() => {
+        window.location.href = 'mailto:nitish58006@gmail.com';
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
