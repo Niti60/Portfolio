@@ -162,6 +162,20 @@
   .hero-links a::before{ content:"$ "; color:var(--paper-45); }
   .hero-links a:hover::before{ color:var(--accent); }
 
+  .hero-links a.contact-btn{
+    color:var(--bg);
+    background:var(--accent);
+    border-color:var(--accent);
+    font-weight:600;
+  }
+  .hero-links a.contact-btn::before{ color:rgba(16,22,26,.6); }
+  .hero-links a.contact-btn:hover{
+    color:var(--bg);
+    background:var(--paper);
+    border-color:var(--paper);
+  }
+  .hero-links a.contact-btn:hover::before{ color:rgba(16,22,26,.6); }
+
   /* ── Sections ── */
   section{ margin-top:4rem; opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
   section.show{ opacity:1; transform:translateY(0); }
@@ -422,8 +436,9 @@
             <a href="https://github.com/Niti60" target="_blank" rel="noopener noreferrer">github</a>
             <a href="https://www.linkedin.com/in/nitish-kumar-yadav-a93660327/" target="_blank" rel="noopener noreferrer">linkedin</a>
             <a href="https://collection.cloudinary.com/dkczwvm0e/24bb69030b6b7befad755b71f2a739c9" target="_blank" rel="noopener noreferrer">resume</a>
-            <a href="mailto:nitish58006@gmail.com" id="email-link">email</a>
+            <a href="mailto:hi@nitishyadav.com" id="email-link">email</a>
             <a href="tel:+919625553259">call</a>
+            <a href="mailto:hi@nitishyadav.com" class="contact-btn">contact</a>
             <span class="copy-note" id="copy-note">copied ✓</span>
           </nav>
         </div>
@@ -673,7 +688,7 @@
         <span class="l-name">LinkedIn</span>
         <span class="l-desc">professional profile</span>
       </a>
-      <a class="link-card" href="mailto:nitish58006@gmail.com">
+      <a class="link-card" href="mailto:hi@nitishyadav.com">
         <span class="l-name">Email</span>
         <span class="l-desc">professional email</span>
       </a>
@@ -753,11 +768,11 @@
     emailLink.addEventListener('click', function(e){
       if (!navigator.clipboard) return; // let default mailto happen
       e.preventDefault();
-      navigator.clipboard.writeText('nitish58006@gmail.com').then(() => {
+      navigator.clipboard.writeText('hi@nitishyadav.com').then(() => {
         note.classList.add('show');
         setTimeout(() => note.classList.remove('show'), 1600);
       }).catch(() => {
-        window.location.href = 'mailto:nitish58006@gmail.com';
+        window.location.href = 'mailto:hi@nitishyadav.com';
       });
     });
   })();
